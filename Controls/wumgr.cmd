@@ -1,0 +1,2 @@
+.\wumgr\wumgr.exe
+cls

@@ -1,0 +1,2 @@
+%SetupApp% /SP- /VERYSILENT /PORTABLE /DIR="%ProgramData%\PhoenixOS\WinaeroTweaker"
+exit
