@@ -4,7 +4,6 @@ set page=https://github.com/MrR736/CoreUpdates/archive/refs/heads/main.zip
 mkdir Update
 cd .\Update
 wget %page%
-copy "%ProgramData%\PhoenixOS\Core Updates\Controls\Txt\del.txt" "%ProgramData%\PhoenixOS\Update"
 setlocal
 
 Call :UnZipFile "%ProgramData%\PhoenixOS\Update" "%ProgramData%\PhoenixOS\Update\main.zip"
@@ -26,7 +25,7 @@ cscript //nologo %vbs%
 if exist %vbs% del /f /q %vbs%
 
 timeout /t 3 /nobreak
-
+copy "%ProgramData%\PhoenixOS\Core Updates\Controls\Txt\del.txt" "%ProgramData%\PhoenixOS\Update"
 cd "%ProgramData%\PhoenixOS"
 set "new_batch_file=%ProgramData%\PhoenixOS\Update\core.cmd"
 echo @echo off > "%new_batch_file%"
