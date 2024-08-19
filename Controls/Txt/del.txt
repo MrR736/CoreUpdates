@@ -1,1 +1,11 @@
-rd /s /q "%ProgramData%\PhoenixOS\Updates" & exit
+@echo off 
+cd %ProgramData%\PhoenixOS 
+rd /s /q "%ProgramData%\PhoenixOS\Core Updates" 
+mkdir "Core Updates"
+xcopy /s /y "%ProgramData%\PhoenixOS\Update\CoreUpdates-main" "%ProgramData%\PhoenixOS\Core Updates"
+timeout /t 3 /nobreak
+if not exist "%ProgramData%\PhoenixOS\Update" (
+  echo Folder does not exist.
+  exit /b
+)
+rd /s /q "%ProgramData%\PhoenixOS\Update"
