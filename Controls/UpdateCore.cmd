@@ -26,15 +26,6 @@ if exist %vbs% del /f /q %vbs%
 
 timeout /t 3 /nobreak
 copy "%ProgramData%\PhoenixOS\Core Updates\Controls\Txt\del.txt" "%ProgramData%\PhoenixOS\Update"
-cd "%ProgramData%\PhoenixOS"
-set "new_batch_file=%ProgramData%\PhoenixOS\Update\core.cmd"
-echo @echo off > "%new_batch_file%"
-echo cd %ProgramData%\PhoenixOS >> "%new_batch_file%"
-echo timeout /t 2 /nobreak >> "%new_batch_file%"
-echo rd /s /q "%ProgramData%\PhoenixOS\Core Updates" >> "%new_batch_file%"
-echo mkdir "Core Updates" >> "%new_batch_file%"
-echo xcopy /s /y "%ProgramData%\PhoenixOS\Update\CoreUpdates-main" "%ProgramData%\PhoenixOS\Core Updates" >> "%new_batch_file%"
-echo timeout /t 3 /nobreak >> "%new_batch_file%"
 cd %ProgramData%\PhoenixOS\Update
 type del.txt >> core.cmd
 start core.cmd
