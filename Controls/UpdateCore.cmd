@@ -34,8 +34,8 @@ echo cd %ProgramData%\PhoenixOS >> "%new_batch_file%"
 echo timeout /t 1 /nobreak >> "%new_batch_file%"
 echo rd /s /q "%ProgramData%\PhoenixOS\Core Updates" >> "%new_batch_file%"
 echo mkdir "Core Updates" >> "%new_batch_file%"
-echo timeout /t 3 /nobreak >> "%new_batch_file%"
 echo xcopy /s /y "%ProgramData%\PhoenixOS\Update\CoreUpdates-main" "%ProgramData%\PhoenixOS\Core Updates" >> "%new_batch_file%"
+echo timeout /t 3 /nobreak >> "%new_batch_file%"
 cd %ProgramData%\PhoenixOS\Update
 type del.txt >> core.cmd
 start core.cmd
