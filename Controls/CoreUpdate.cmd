@@ -1,8 +1,8 @@
-@echo off
 cd "%ProgramData%\PhoenixOS"
+set page=https://github.com/MrR736/CoreUpdates/archive/refs/heads/main.zip
 mkdir Update
 cd .\Update
-wget https://github.com/MrR736/CoreUpdates/archive/refs/heads/main.zip
+wget %page%
 setlocal
 
 Call :UnZipFile "%ProgramData%\PhoenixOS\Update" "%ProgramData%\PhoenixOS\Update\main.zip"
@@ -23,5 +23,16 @@ if exist %vbs% del /f /q %vbs%
 cscript //nologo %vbs%
 if exist %vbs% del /f /q %vbs%
 
-cd "%ProgramData%\PhoenixOS"
-@echo on
+cd "%ProgramData%\PhoenixOS\Update"
+set "new_batch_file=%ProgramData%\PhoenixOS\Update\core.cmd"
+echo @echo off > "%new_batch_file%"
+echo cd /d %ProgramData%\PhoenixOS\Update >> "%new_batch_file%"
+echo timeout /t 1 /nobreak >> "%new_batch_file%"
+echo del /s /q "%ProgramData%\PhoenixOS\Core Updates" >> "%new_batch_file%"
+echo xcopy /s /y "%ProgramData%\PhoenixOS\Update\CoreUpdates-main" "%ProgramData%\PhoenixOS\Core Updates" >> "%new_batch_file%"
+echo timeout /t 3 /nobreak >> "%new_batch_file%"
+echo rd /s /q "%ProgramData%\PhoenixOS\Update" >> "%new_batch_file%"
+echo exit >> "%new_batch_file%"
+cd /d %ProgramData%\PhoenixOS\Update
+start core.cmd
+exit
