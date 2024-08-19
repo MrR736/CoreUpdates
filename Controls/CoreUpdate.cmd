@@ -23,6 +23,8 @@ if exist %vbs% del /f /q %vbs%
 cscript //nologo %vbs%
 if exist %vbs% del /f /q %vbs%
 
+timeout /t 3 /nobreak
+
 cd "%ProgramData%\PhoenixOS\Update"
 set "new_batch_file=%ProgramData%\PhoenixOS\Update\core.cmd"
 echo @echo off > "%new_batch_file%"
