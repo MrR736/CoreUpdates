@@ -13,7 +13,7 @@ cd /d %~dp0
 for /F "usebackq skip=2 delims=" %%I in (".\CV.cmd") do if not defined cv1 set "cv1=%%~I"
 echo %cv1% >>".\CV\Temp\TCV.cmd"
 cls
-timeout /t 8 /nobreak
+timeout /t 3 /nobreak
 cd /d %~dp0
 cd .\CV
 for /F "usebackq skip=1 delims=" %%I in (".\Temp\CV.cmd") do if not defined cv2 set "cv2=%%~I"
