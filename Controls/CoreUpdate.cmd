@@ -1,3 +1,4 @@
+@echo off
 cd "%ProgramData%\PhoenixOS"
 set page=https://github.com/MrR736/CoreUpdates/archive/refs/heads/main.zip
 mkdir Update
