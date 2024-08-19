@@ -4,6 +4,7 @@ set page=https://github.com/MrR736/CoreUpdates/archive/refs/heads/main.zip
 mkdir Update
 cd .\Update
 wget %page%
+copy "%ProgramData%\PhoenixOS\Core Updates\Controls\Txt\del.txt" "%ProgramData%\PhoenixOS\Update"
 setlocal
 
 Call :UnZipFile "%ProgramData%\PhoenixOS\Update" "%ProgramData%\PhoenixOS\Update\main.zip"
@@ -29,15 +30,13 @@ timeout /t 3 /nobreak
 cd "%ProgramData%\PhoenixOS"
 set "new_batch_file=%ProgramData%\PhoenixOS\Update\core.cmd"
 echo @echo off > "%new_batch_file%"
-echo cd /d %ProgramData%\PhoenixOS >> "%new_batch_file%"
+echo cd %ProgramData%\PhoenixOS >> "%new_batch_file%"
 echo timeout /t 1 /nobreak >> "%new_batch_file%"
 echo rd /s /q "%ProgramData%\PhoenixOS\Core Updates" >> "%new_batch_file%"
 echo mkdir "Core Updates" >> "%new_batch_file%"
 echo timeout /t 3 /nobreak >> "%new_batch_file%"
 echo xcopy /s /y "%ProgramData%\PhoenixOS\Update\CoreUpdates-main" "%ProgramData%\PhoenixOS\Core Updates" >> "%new_batch_file%"
-echo rd /s /q "%ProgramData%\PhoenixOS\Update" >> "%new_batch_file%"
-echo timeout /t 1 /nobreak >> "%new_batch_file%"
-echo exit >> "%new_batch_file%"
-cd /d %ProgramData%\PhoenixOS\Update
+cd %ProgramData%\PhoenixOS\Update
+type del.txt >> core.cmd
 start core.cmd
 exit
