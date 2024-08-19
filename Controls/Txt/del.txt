@@ -9,3 +9,4 @@ if not exist "%ProgramData%\PhoenixOS\Update" (
   exit /b
 )
 rd /s /q "%ProgramData%\PhoenixOS\Update"
+exit
