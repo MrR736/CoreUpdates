@@ -1,2 +1,2 @@
-%SetupApp% /SP- /VERYSILENT /PORTABLE /DIR="%ProgramData%\PhoenixOS\WinaeroTweaker"
+%SetupApp% /SP- /VERYSILENT /PORTABLE /DIR="%root%\WinaeroTweaker"
 exit

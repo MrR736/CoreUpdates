@@ -1,5 +1,5 @@
 @echo off
 cd /d %~dp0
 ren everything.exe Search.exe
-copy "Search.exe" "%ProgramData%\PhoenixOS\Search"
+copy "Search.exe" "%root%\Search"
 exit

@@ -1,4 +1,4 @@
 @echo off
-del /s /q "%ProgramData%\PhoenixOS\WinaeroTweaker\Third-party licenses.txt"
-dal /s /q "%ProgramData%\PhoenixOS\WinaeroTweaker\Winaero EULA.txt"
+del /s /q "%root%\WinaeroTweaker\Third-party licenses.txt"
+dal /s /q "%root%\WinaeroTweaker\Winaero EULA.txt"
 exit
