@@ -1,2 +1,0 @@
-%SetupApp% /SP- /VERYSILENT /PORTABLE /DIR="%root%\WinaeroTweaker"
-exit
