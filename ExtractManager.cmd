@@ -5,7 +5,7 @@ cd /d %~dp0
 
 setlocal
 
-Call :UnZipFile "%cd%\Temp\winaero-tweaker" "%cd%\Download Manager\winaerotweaker.zip"
+Call :UnZipFile "%cd%\Temp\winaero-tweaker" "%cd%\Download Manager\winaero-tweaker\winaerotweaker.zip"
 exit /b
 
 :UnZipFile <ExtractTo> <newzipfile>
@@ -25,7 +25,7 @@ if exist %vbs% del /f /q %vbs%
 
 setlocal
 
-Call :UnZipFile "%cd%\Temp\Everything" "%cd%\Download Manager\Everything-1.4.1.1026.x64.zip"
+Call :UnZipFile "%cd%\Temp\Everything" "%cd%\Download Manager\Everything\Everything.zip"
 exit /b
 
 :UnZipFile <ExtractTo> <newzipfile>

@@ -6,8 +6,12 @@ mkdir Temp
 cd .\Temp
 mkdir winaero-tweaker
 mkdir Everything
-cd /d %~dp0
+cd %root%\Search
+taskKill /f /im Search.exe /t
 del /s /q "%root%\Search"
+cd %root%\WinaeroTweaker
+taskKill /f /im WinaeroTweaker.exe /t
 del /s /q "%root%\WinaeroTweaker"
-start DownloadManager.cmd
+cd /d %~dp0
+start call DownloadManager.cmd
 exit
