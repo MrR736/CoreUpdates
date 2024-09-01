@@ -5,4 +5,4 @@ for /f "tokens=*" %%f in ('dir /b /a-d "*.zip"') do (
     @echo %%f
     @rename "%%f" "winaerotweaker.zip"
 )
-exit
+7za.exe e winaerotweaker.zip -o%Core%\CoreUpdates\Temp\winaero-tweaker\

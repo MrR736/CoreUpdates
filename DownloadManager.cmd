@@ -2,7 +2,7 @@
 cls
 cd /d %~dp0
 xcopy /s /y "%cd%\List" "%cd%\Download Manager"
-cls
-start call "%cd%\Download Manager\Download.cmd"
-timeout /t 15 /nobreak
-ExtractManager.cmd
+call "%cd%\Download Manager\Download.cmd"
+cd /d %~dp0
+start InstallManager.cmd
+exit
