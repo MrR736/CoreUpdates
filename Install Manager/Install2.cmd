@@ -4,5 +4,5 @@ for /f "tokens=*" %%f in ('dir /b /a-d "*.exe"') do (
     @echo %%f
     @rename "%%f" "Search.exe"
 )
-copy "Search.exe" "%root%\Search"
+copy "Search.exe" "%ProgramData%\PhoenixOS\Search"
 exit
