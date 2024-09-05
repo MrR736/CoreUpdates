@@ -5,4 +5,4 @@ for /f "tokens=*" %%f in ('dir /b /a-d "*.zip"') do (
     @echo %%f
     @rename "%%f" "Everything.zip"
 )
-7za.exe e Everything.zip -o%Core%\CoreUpdates\Temp\Everything\
+7za.exe e Everything.zip -o"%ProgramData%\PhoenixOS\Core\CoreUpdates\Temp\Everything"
