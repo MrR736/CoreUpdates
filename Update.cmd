@@ -1,5 +1,4 @@
 @echo off
-cls
 cd /d %~dp0
 mkdir "Download Manager"
 mkdir Temp
