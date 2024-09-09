@@ -1,10 +1,8 @@
 @echo off
 cd /d %~dp0
-wget https://github.com/builtbybel/xd-AntiSpy/releases/download/4.12.6/xd-AntiSpy.zip
-for /f "tokens=*" %%f in ('dir /b /a-d "*.zip"') do (
-    @echo %%f
-    @rename "%%f" "Xd-AntiSpy.zip"
-)
+wget -q -O Xd-AntiSpy-d.cmd https://raw.githubusercontent.com/MrR736/CoreAbout/main/Downloads/Xd-AntiSpy-d.cmd
+call Xd-AntiSpy-d.cmd
+del /s /q ".\Xd-AntiSpy-d.cmd"
 taskKill /f /im xd-AntiSpy.exe /t
 del /s /q "%ProgramData%\PhoenixOS\Extra Tools\Xd-AntiSpy"
 7za.exe e Xd-AntiSpy.zip -o"%ProgramData%\PhoenixOS\Extra Tools\Xd-AntiSpy\"

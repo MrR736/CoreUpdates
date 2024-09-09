@@ -4,12 +4,10 @@ mkdir "Download Manager"
 mkdir Temp
 cd .\Temp
 mkdir winaero-tweaker
-mkdir Everything
+for /f "tokens=*" %%f in ('dir /b /a-d %ProgramData%\PhoenixOS\WinaeroTweaker\*.exe') do (
+    taskkill /im "%%~nf.exe"
+)
 taskKill /f /im Search.exe /t
-taskKill /f /im WinaeroTweakerHelper.exe /t
-taskKill /f /im Elevator.exe /t
-taskKill /f /im no_tab_explorer.exe /t
-taskKill /f /im WinaeroTweaker.exe /t
 del /s /q "%ProgramData%\PhoenixOS\WinaeroTweaker"
 del /s /q "%ProgramData%\PhoenixOS\Search"
 cd /d %~dp0
