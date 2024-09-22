@@ -1,0 +1,13 @@
+@echo off
+cd /d %~dp0
+
+setlocal enabledelayedexpansion
+
+for /f "tokens=*" %%f in ('dir /b /ad') do (
+    for /f "tokens=*" %%i in ('dir /s /b ".\%%f\*.bat" 2^>nul') do (
+        start /w cmd /c "%%i"
+    )
+)
+
+endlocal
+exit

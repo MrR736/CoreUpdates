@@ -1,5 +1,6 @@
 @echo off
 cd /d %~dp0
-copy "%cd%\Install Manager\Install.cmd" "%cd%\Temp\winaero-tweaker"
+start /w cmd /c call ".\DownloadMgr\Setup.bat"
+type ".\DownloadMgr\InstallMgr" > ".\Temp\InstallMgr.bat"
 start Task.cmd
 exit

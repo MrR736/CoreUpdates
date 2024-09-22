@@ -1,5 +1,5 @@
 @echo off
 cd /d %~dp0
-rd /s /q ".\Download Manager\"
+rd /s /q ".\DownloadMgr\"
 rd /s /q ".\Temp\"
 exit
