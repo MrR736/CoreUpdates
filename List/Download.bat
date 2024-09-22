@@ -1,9 +1,9 @@
 @echo off
 cd /d %~dp0
-echo %cd%> ".\Xd-AntiSpy\Path.txt"
-echo %cd%> ".\Everything\Path.txt"
-echo %cd%> ".\winaero-tweaker\Path.txt"
-start /w cmd /c call "%cd%\Everything\Everything.cmd"
-start /w cmd /c call "%cd%\winaero-tweaker\winaero-tweaker.cmd"
-start /w cmd /c call "%cd%\Xd-AntiSpy\Xd-AntiSpy.cmd"
+for /f "tokens=*" %%a in ('dir /b /ad') do (
+    @echo %cd%> ".\%%a\Path.txt"
+)
+for /f "tokens=*" %%f in ('dir /s /b /a-d "*.cmd"') do (
+    @start /w cmd /c call "%%f"
+)
 exit
