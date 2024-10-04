@@ -44,5 +44,5 @@ endlocal
 mkdir DownloadMgr
 mkdir Temp
 echo %cd%\Temp> ".\DownloadMgr\Path.txt"
-start call DownloadManager.cmd
+start call DownloadMgr.cmd
 exit
